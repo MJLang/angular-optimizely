@@ -36,10 +36,7 @@ angular.module('ngshowvariant',[]);
  * });
  */
  angular.module('ngshowvariant').directive('ngShowVariant', ['$rootScope', function($rootScope) {
-    // var variant = window.variant;
-    // if (!variant) {
-    //   variant = 'none';
-    // }
+    var variant;
     function inList(needle, list) {
       var res = false;
       angular.forEach(list, function(x) {
