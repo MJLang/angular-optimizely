@@ -58,7 +58,7 @@ angular.module('ngshowvariant',[]);
         }
         variant = window[variantId];
         if (!variant) {
-          variant = 'fubar';
+          variant = 'none';
         }
 
         var expectingVariant = (attr.ngShowVariant||'').split(',');
