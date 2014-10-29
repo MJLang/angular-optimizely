@@ -36,10 +36,10 @@ angular.module('ngshowvariant',[]);
  * });
  */
  angular.module('ngshowvariant').directive('ngShowVariant', ['$rootScope', function($rootScope) {
-    var variant = window.variant;
-    if (!variant) {
-      variant = 'none';
-    }
+    // var variant = window.variant;
+    // if (!variant) {
+    //   variant = 'none';
+    // }
     function inList(needle, list) {
       var res = false;
       angular.forEach(list, function(x) {
@@ -61,7 +61,7 @@ angular.module('ngshowvariant',[]);
         }
         variant = window[variantId];
         if (!variant) {
-          variant = 'none';
+          variant = 'fubar';
         }
 
         var expectingVariant = (attr.ngShowVariant||'').split(',');
