@@ -16,7 +16,7 @@ angular.module('ngshowvariant',[]);
  *    <div ng-show-variant="cactus">variant cactus is running</div>
  *    <div ng-show-variant="cactus,alphabet">variant cactus or alphabet is running</div>
  *    <div ng-show-variant="none">No variant is enabled</div>
-      <div ng-show-variant="cactus" mg-show-variant-id="experiment1">Load Key from a different experiment</div>
+ *    <div ng-show-variant="cactus" mg-show-variant-id="experiment1">Load Key from a different experiment</div>
  *    <div ng-show-variant="cactus,none">either variant cactus or no variant is enabled</div>
  * </code>
  */
@@ -65,7 +65,7 @@ angular.module('ngshowvariant',[]);
         }
 
         var expectingVariant = (attr.ngShowVariant||'').split(',');
-        
+
         function toggleVisibility(newVariant) {
           variant = newVariant;
           var hide = !inList(newVariant, expectingVariant);
@@ -75,7 +75,7 @@ angular.module('ngshowvariant',[]);
 
         toggleVisibility(variant);
 
-        $rootScope.$on('$updateVariant', function() { fn(window.variant); });
+        $rootScope.$on('$updateVariant', function() { toggleVisibility(window[variantId]); });
       }
     };
   }]);
