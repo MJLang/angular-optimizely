@@ -68,7 +68,7 @@ angular.module('ngshowvariant',[]);
           var hide = !inList(newVariant, expectingVariant);
           el.toggleClass('hide', hide);
         }
-        
+
 
         toggleVisibility(variant);
 
